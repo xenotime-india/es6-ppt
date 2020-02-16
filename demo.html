@@ -499,7 +499,109 @@ const total = calculateTotal({ subtotal : 100, shipping: 20 });
 																																																																		</code>
 																																																																		</pre>
           </section>
-        </section>
+				</section>
+				<section>
+					<section>
+						<h2>Spread… and ...Rest</h2>
+					</section>
+					<section>
+						<h2>...Spread Operator</h2>
+						<p>Before ES6, we would run .apply() to pass in an array of arguments.</p>
+						<pre><code class="hljs">
+function doSomething (x, y, z) { 
+	console.log(x, y, z); 
+} 
+let args = [0, 1, 2]; 
+
+// Call the function, passing args.
+doSomething.apply(null, args)
+																																						</code>
+																																						</pre>
+					</section>
+					<section>
+						<h2>...Spread Operator</h2>
+						<p>But with ES6, we can use the spread operator ... to pass in the arguments.</p>
+						<pre><code class="hljs">
+function doSomething (x, y, z) { 
+	console.log(x, y, z); 
+} 
+const args = [0, 1, 2]; 
+// Call the function, passing args with the spread operator!
+doSomething(...args);
+																																											</code>
+																																											</pre>
+					</section>
+					<section>
+						<h2>...Spread Operator</h2>
+						<p>We can also use the spread operator to combine arrays.</p>
+						<pre><code class="hljs">
+const array1 = ['one', 'two', 'three']; 
+const array2 = ['four', 'five']; 
+array1.push(...array2) // Adds array2 items to end of array 
+array1.unshift(...array2) //Adds array2 items to beginning of array
+																																																</code>
+																																																</pre>
+					</section>
+					<section>
+						<h2>...Spread Operator</h2>
+						<p>We can also use the spread operator to combine arrays at any point.</p>
+						<pre><code class="hljs">
+const array1 = ['two', 'three']; 
+const array2 = ['one', ...array1, 'four', 'five']; 
+
+console.log(array2); 
+// ["one", "two","three", "four", "five"]
+																																																					</code>
+																																																					</pre>
+					</section>
+					<section>
+						<h2>...Spread Operator</h2>
+						<p>We can also use the spread operator with destructuring.</p>
+						<pre><code class="hljs">
+const players = [ 'Kevin', 'Bobby', 'Nicole', 'Naomi', 'Jim', 'Sherry' ]; 
+const [ first, second, third, ...unplaced ] = players; 
+
+console.log(first); // Kevin 
+console.log(second); // Bobby 
+console.log(third); // Nicole 
+console.log(unplaced); // ["Naomi", "Jim", "Sherry"]
+																																																										</code>
+																																																										</pre>
+					</section>
+					<section>
+						<h2>...Spread Operator</h2>
+						<p>We can also use the spread operator with destructuring.</p>
+						<pre><code class="hljs">
+const { x, y, ...z } = { x: 1, y: 2, a: 3, b: 4 }; 
+console.log(x); // 1 
+console.log(y); // 2 
+console.log(z); // { a: 3, b: 4 }
+																																																															</code>
+																																																															</pre>
+					</section>
+					<section>
+						<h2>...Spread Operator</h2>
+						<p>We can also use the spread operator to expand a NodeList.</p>
+						<pre><code class="hljs">
+const elements = [...document.querySelectorAll('div')]; 
+console.log(elements); 
+// Lists all the div's on the page.
+																																																																				</code>
+																																																																				</pre>
+					</section>
+					<section>
+						<h2>...Rest Operator</h2>
+						<p>allows us to more easily handle a variable number of function parameters.</p>
+						<pre><code class="hljs">
+function doMath(operator, ...numbers) { 
+	console.log(operator); // 'add' 
+	console.log(numbers); // [1, 2, 3] 
+}
+doMath('add', 1, 2, 3);
+																																																																									</code>
+																																																																									</pre>
+					</section>
+				</section>
         <section>
           <section>
             <h2>Template Literals</h2>
