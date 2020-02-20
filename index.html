@@ -26,9 +26,9 @@
 		var link = document.createElement('link');
 		link.rel = 'stylesheet';
 		link.type = 'text/css';
-		link.href = window.location.search.match(/print-pdf/gi)
-			? 'css/print/pdf.css'
-			: 'css/print/paper.css';
+		link.href = window.location.search.match(/print-pdf/gi) ?
+			'css/print/pdf.css' :
+			'css/print/paper.css';
 		document.getElementsByTagName('head')[0].appendChild(link);
 	</script>
 
@@ -43,9 +43,6 @@
 		<div class="slides">
 			<section>
 				<h2>JavaScript best practices (ES6)</h2>
-				<p>
-					By Sandeep & Vikash
-				</p>
 			</section>
 			<section>
 				<h2>ES_???</h2>
@@ -792,69 +789,8 @@ asyncCall();
 																																																											</pre>
 				</section>
 			</section>
-			<section>
-				<section>
-					<h2>New Array Features!</h2>
-				</section>
-				<section>
-					<h2>Array.from()</h2>
-					<pre><code class="hljs">
-const headers = document.querySelectorAll('h1'); 
-const titles = headers.map(h1 => h1.textContent); 
-// TypeError: headers.map is not a function
-																																										</code>
-																																										</pre>
-				</section>
-				<section>
-					<h2>Array.from()</h2>
-					<pre><code class="hljs">
-const headers = document.querySelectorAll('h1'); 
-const headersArray = Array.from(headers); 
-const titles = headersArray.map(h1 => h1.textContent);
-																																															</code>
-																																															</pre>
-				</section>
-				<section>
-					<h2>Array.from()</h2>
-					<pre><code class="hljs">
-const headers = document.querySelectorAll('h1'); 
-const titles = Array.from(headers, h1 => { 
-	return h1.textContent; 
-});
-																																																				</code>
-																																																				</pre>
-				</section>
-				<section>
-					<h2>Array.from()</h2>
-					<pre><code class="hljs">
-const titles = Array.from(document.querySelectorAll('h1'), h1 => { 
-	return h1.textContent; 
-});
-																																																									</code>
-																																																									</pre>
-				</section>
-				<section>
-					<h2>Array.find()</h2>
-					<pre><code class="hljs">
-const posts = [ { 
-	id: 1, 
-	title: 
-	'Hello World!' 
-}, { 
-	id: 2, 
-	title: 'Learn JS Deeply!' 
-} ]; 
-const post = posts.find(post => post.id === 2); 
-console.log(post); // {id: 2, title: "Learn JS Deeply!"}
-																																																														</code>
-																																																														</pre>
-				</section>
-
-			</section>
-
 			<section style="text-align: left;">
-				<h1>Thank You</h1>
-				<p>Sandeep & Vikash</p>
+				<h1>Q & A</h1>
 			</section>
 		</div>
 	</div>
@@ -872,8 +808,7 @@ console.log(post); // {id: 2, title: "Learn JS Deeply!"}
 			transition: 'concave', // none/fade/slide/convex/concave/zoom
 
 			// More info https://github.com/hakimel/reveal.js#dependencies
-			dependencies: [
-				{
+			dependencies: [{
 					src: 'plugin/markdown/marked.js',
 					condition: function () {
 						return !!document.querySelector('[data-markdown]');
@@ -885,10 +820,21 @@ console.log(post); // {id: 2, title: "Learn JS Deeply!"}
 						return !!document.querySelector('[data-markdown]');
 					}
 				},
-				{ src: 'plugin/highlight/highlight.js' },
-				{ src: 'plugin/search/search.js', async: true },
-				{ src: 'plugin/zoom-js/zoom.js', async: true },
-				{ src: 'plugin/notes/notes.js', async: true }
+				{
+					src: 'plugin/highlight/highlight.js'
+				},
+				{
+					src: 'plugin/search/search.js',
+					async: true
+				},
+				{
+					src: 'plugin/zoom-js/zoom.js',
+					async: true
+				},
+				{
+					src: 'plugin/notes/notes.js',
+					async: true
+				}
 			]
 		});
 	</script>
